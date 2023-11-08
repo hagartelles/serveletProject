@@ -1,0 +1,66 @@
+package controller;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.time.LocalDate;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import dao.ClientDAO;
+import model.Client;
+
+@WebServlet("/UpdateController")
+public class UpdateController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+
+
+	
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		int id = Integer.parseInt(req.getParameter("id"));
+		
+		
+		ClientDAO clientDAO = new ClientDAO();
+		Client client = clientDAO.findById(id);
+		
+		req.setAttribute("client", client);
+		
+		RequestDispatcher rd = req.getRequestDispatcher("update.jsp");
+		rd.forward(req, res);
+
+	}
+
+	
+	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		
+		try {
+			Client client = new Client();
+			client.setId(client.getId());
+			client.setCpf(Long.parseLong(req.getParameter("cpf")));
+			client.setNome(req.getParameter("nome"));
+			client.setBornDate(LocalDate.parse(req.getParameter("dataNasc")));
+			client.setAdress(req.getParameter("endereco"));
+			client.setEmail(req.getParameter("email"));
+			client.setTel(Long.parseLong(req.getParameter("tel")));
+			client.setCreatedTime(client.getCreatedTime());
+			
+			
+			ClientDAO cDAO = new ClientDAO();
+			cDAO.updateClient(client);
+			
+			res.sendRedirect("ReadController");
+		} catch (Exception e) {
+			
+		}
+		
+		
+		
+		
+	}
+
+}

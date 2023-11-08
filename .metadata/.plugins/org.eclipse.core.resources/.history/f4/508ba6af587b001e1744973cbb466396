@@ -1,0 +1,20 @@
+package model;
+
+import java.util.Date;
+
+public class Client {
+
+	private long id;
+	private long cpf;
+	private String nome;
+	private Date bornDate;
+	private String adress;
+	private String email;
+	private long tel;
+	private Date createdTime;
+	
+	
+	
+	
+	
+}

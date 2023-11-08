@@ -1,0 +1,52 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Cliente</title>
+    <!-- Incluindo arquivos CSS do Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Formulário de Cliente</h1>
+        <form action="processaFormulario.jsp" method="post">
+            <div class="form-group">
+                <label for="cpf">CPF (11 dígitos):</label>
+                <input type="text" class="form-control" id="cpf" name="cpf" required pattern="\d{11}">
+            </div>
+
+            <div class="form-group">
+                <label for="nome">Nome (até 30 caracteres):</label>
+                <input type="text" class="form-control" id="nome" name="nome" maxlength="30" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dataNasc">Data de Nascimento (AAAA-MM-DD):</label>
+                <input type="text" class="form-control" id="dataNasc" name="dataNasc" required pattern="\d{4}-\d{2}-\d{2}">
+            </div>
+
+            <div class="form-group">
+                <label for="endereco">Endereço (até 30 caracteres):</label>
+                <input type="text" class="form-control" id="endereco" name="endereco" maxlength="30">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email (até 30 caracteres):</label>
+                <input type="email" class="form-control" id="email" name="email" maxlength="30">
+            </div>
+
+            <div class="form-group">
+                <label for="telefone">Telefone (até 16 dígitos):</label>
+                <input type="text" class="form-control" id="telefone" name="telefone" pattern="\d{1,16}">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+
+    <!-- Incluindo arquivos JavaScript do Bootstrap e jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

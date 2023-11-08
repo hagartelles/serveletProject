@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Gerenciamento de Clientes</title>
+  <style>
+    .container {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Gerenciamento de Clientes</h2>
+
+    <!-- Formulário para Ações de Cliente -->
+    <form id="cliente-form">
+      <div class="form-group">
+        <label for="nome">Nome do Cliente:</label>
+        <input type="text" class="form-control" id="nome" placeholder="Nome do Cliente">
+      </div>
+      <button type="submit" class="btn btn-primary" name="cadastrar">Cadastrar Cliente</button>
+      <button type="button" class="btn btn-primary" name="procurar">Procurar Clientes</button>
+      <button type="button" class="btn btn-primary" name="atualizar">Atualizar Cliente</button>
+      <button type="button" class="btn btn-danger" name="excluir">Excluir Cliente</button>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
